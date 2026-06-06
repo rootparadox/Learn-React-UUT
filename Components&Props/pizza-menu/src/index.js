@@ -70,10 +70,23 @@ function Header() {
 // Parent component of pizza Com
 // Props => properties
 function Menu() {
+  // Map => array => return arr
+  const pizzas = pizzaData;
+  const numPizzas = pizzas.length;
+  console.log(numPizzas);
   return (
     <menu className="menu">
       <h2>Our menu!</h2>
-      <Pizza
+      {/* LIST RENDERING */}
+      {numPizzas > 0 && (
+        <ul className="pizzas">
+          {pizzas.map((pizza) => {
+            return <Pizza pizzaObj={pizza} key={pizza.name} />;
+          })}
+        </ul>
+      )}
+
+      {/* <Pizza
         name="Focaccia"
         ingredients="Bread with italian olive oil and rosemary"
         photoName="pizzas/focaccia.jpg"
@@ -84,34 +97,40 @@ function Menu() {
         ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
         photoName="pizzas/prosciutto.jpg"
         price="18"
-      />
+      /> */}
     </menu>
   );
 }
 // Child component of menu Com
-function Pizza({ name, ingredients, ...others }) {
-  // console.log(props);
-  console.log(name, ingredients, others);
+function Pizza(props) {
   return (
-    <div className="pizza">
-      <img src={others.photoName} alt="there is no  here!" />
+    <li className="pizza">
+      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
       <div>
-        <h3>{name}</h3>
-        <p>{ingredients}</p>
-        <span>{others.price}</span>
+        <h3>{props.pizzaObj.name}</h3>
+        <p>{props.pizzaObj.ingredients}</p>
+        <span>{Number(props.pizzaObj.price)}</span>
       </div>
-    </div>
+    </li>
   );
 }
+
 function Footer() {
   const hour = new Date().getHours();
-  const open = 12;
+  const open = 11;
   const close = 23;
   const isOpen = hour >= open && hour <= close;
   console.log(isOpen);
+  // truthy value => numbers , string.length > 0 , [].length > 0
+  // falsy value => null , undefined , [] , {} , "" , 0
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()} We're currently open!
+      {isOpen && (
+        <div className="order">
+          <p>We're open until {close}. you can order online.</p>
+          <button className="btn">Order</button>
+        </div>
+      )}
     </footer>
   );
   // React.createElement("footer", null, "We're currently open!");
