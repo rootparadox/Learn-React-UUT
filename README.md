@@ -2,7 +2,7 @@
 
 Welcome to this repository! This project contains the materials and code examples I developed for teaching **React.js** to students at **Urmia University of Technology (UUT)**. 
 
-The curriculum and projects are inspired by **Jonas Schmedtmann's Ultimate React Course**, structured specifically to help my students understand modern React development from the ground up.
+The curriculum and projects are inspired by **Jonas Schmedtmann's Ultimate React Course**, structured specifically to help  students understand modern React development from the ground up.
 
 ---
 
@@ -18,7 +18,7 @@ I have organized the code into specific sections to facilitate a step-by-step le
 
 ---
 
-## 📚 Topics Covered in My Lectures
+## 📚 Topics Covered in this Lectures
 - [x] **React Fundamentals** (JSX, Components, Props)
 - [x] **State Management** (Lifting state, `useState`)
 - [x] **Class-based React**
@@ -37,7 +37,6 @@ I have organized the code into specific sections to facilitate a step-by-step le
 ## 👨‍🏫 About the Instructor
 - **Instructor:** Mahdi Sogandi
 - **University:** UUT (Urmia University of Technology)
-- **Course Reference:** [Jonas Schmedtmann's Ultimate React Course](https://www.udemy.com/course/the-ultimate-react-course/)
 
 ---
 *This repository is intended for my students. If you find these examples helpful, feel free to star the repo!*
